@@ -116,6 +116,10 @@ class Historico:
          "valor": transacao.valor,
          "data": datetime.now().strftime("%d-%m-%Y %H:%M:%s"),
       })
+      
+   def gerar_relatorio(self, tipo_transacao=None):
+      
+       
 
 class Transacao(ABC):
    @property
@@ -154,6 +158,9 @@ class Deposito(Transacao):
 
       if sucesso_transacao:
          conta.historico.adicionar_transacao(self)
+
+def log_transacao(fun):
+   
 
 def menu():
   menu = """
